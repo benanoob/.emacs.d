@@ -191,8 +191,16 @@
                                          ("PROJ" . +org-todo-project)
                                          ("CANCEL" . +org-todo-cancel))
                 )
+	  )
 
-)
+
+(use-package org-bullets
+  :after org
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●"))
+  (setq org-startup-indented t)
+  )
 
 ;;brackets autoclose
 (electric-pair-mode 1)
@@ -218,7 +226,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(projectile magit marginalia which-key doom-modeline corfu vertico command-log-mode use-package)))
+   '(org-bullets projectile magit marginalia which-key doom-modeline corfu vertico command-log-mode use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
